@@ -1,0 +1,16 @@
+http://magicplugin.normalitycomics.com/update/cardFiles/commander.txt
+http://magicplugin.normalitycomics.com/update/cardFiles/custom-tokens-for-lackeyccg.txt
+http://magicplugin.normalitycomics.com/update/cardFiles/intro-sets.txt
+http://magicplugin.normalitycomics.com/update/cardFiles/modern-core-sets.txt
+http://magicplugin.normalitycomics.com/update/cardFiles/modern-core-sets2.txt
+http://magicplugin.normalitycomics.com/update/cardFiles/modern-expansions.txt
+http://magicplugin.normalitycomics.com/update/cardFiles/modern-expansions2.txt
+http://magicplugin.normalitycomics.com/update/cardFiles/modern-expansions3.txt
+http://magicplugin.normalitycomics.com/update/cardFiles/modern-only-sets.txt
+http://magicplugin.normalitycomics.com/update/cardFiles/premodern-core-sets.txt
+http://magicplugin.normalitycomics.com/update/cardFiles/premodern-expansions.txt
+http://magicplugin.normalitycomics.com/update/cardFiles/premodern-expansions2.txt
+http://magicplugin.normalitycomics.com/update/cardFiles/promos-and-alternates.txt
+http://magicplugin.normalitycomics.com/update/cardFiles/reprint-only-sets.txt
+http://magicplugin.normalitycomics.com/update/cardFiles/silver-border-and-special.txt
+http://magicplugin.normalitycomics.com/update/cardFiles/supplemental.txt
