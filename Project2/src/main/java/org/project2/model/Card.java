@@ -28,11 +28,12 @@ public class Card {
     private void loadInfo() {
         String[] sl = info.split("	");// Separated line
 
-        System.out.println(sl.length != 17);
+        //System.out.println(sl.length != 17);
 
 
-        if (sl.length != 17||sl[1].equals("Name")) {
-            //dont load into database
+        if (sl[0].equals("Name")) {
+            //dont load into database if its the header
+            System.out.println("Second value form table: " + sl[1]);
         } else {
             for (int i = 0; i < sl.length; i++) {
                 if (sl[i].equals(" "))

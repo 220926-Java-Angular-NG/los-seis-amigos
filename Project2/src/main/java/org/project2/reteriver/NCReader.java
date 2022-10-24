@@ -36,9 +36,10 @@ public class NCReader
 		String lineFromFile;
 		int count = 0;
 		while ((lineFromFile = inputFile.readLine()) != null){
-			System.out.println(lineFromFile);
+			//System.out.println(lineFromFile);
 			cardRepo.create(new Card(lineFromFile));
 			String[] seporatedLine = lineFromFile.split("	");
+
 
 			ArrayList<String> placeHolder = new ArrayList<String>();
 			for (String word : seporatedLine){
