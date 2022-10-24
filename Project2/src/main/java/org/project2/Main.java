@@ -12,7 +12,7 @@ create table cards(
 cardid serial primary key,
 name varchar(141) not null,
 setname	varchar(3000),
-imagefile	varchar(3000),
+imagefile	varchar(3000) not null unique,
 actualset	varchar(3000),
 color	varchar(3000),
 colorid	varchar(3000),
