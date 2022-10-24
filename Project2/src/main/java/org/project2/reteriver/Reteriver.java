@@ -1,5 +1,8 @@
 package org.project2.reteriver;
 
+import org.project2.model.Card;
+import org.project2.repo.CardRepo;
+
 import java.io.File;
 import java.io.FileWriter;
 import java.io.PrintWriter;
@@ -8,6 +11,7 @@ import java.util.Scanner;
 
 public class Reteriver {
     public static void main(String[] args) {
+        CardRepo cardRepo = new CardRepo();
         String pathToResources = "src/main/resources/";
         File cardInfoFolder = new File(pathToResources+"cardinfo/");
         if (!cardInfoFolder.exists()) {
@@ -53,8 +57,10 @@ public class Reteriver {
                         if (setsofcards.get(i).size() > 1) {
                             if (setsofcards.get(i).get(1).equals(expansionList.get(j))) {
                                 // i keep this line so we can see progress of data loading
-                                System.out.print(setsofcards.get(i).get(1));
-                                pw.println(setsofcards.get(i));
+                                //System.out.print(setsofcards.get(i).get(1));
+                                // load card into data base
+                                //cardRepo.create(new Card(setsofcards.get(i)));
+                                //pw.println(setsofcards.get(i));
                             }
                         }
                     }
