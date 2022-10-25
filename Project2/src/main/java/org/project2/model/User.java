@@ -8,6 +8,8 @@ public class User {
     private String lastname;
     private String email;
 
+    private boolean hasBought;
+
     public User(){
         this.id = 0;
         this.username = "";
@@ -15,6 +17,7 @@ public class User {
         this.firstname = "";
         this.lastname = "";
         this.email = "";
+        this.hasBought = false;
     }
 
     public User(String user,String pswrd){
@@ -24,6 +27,16 @@ public class User {
         this.firstname = "";
         this.lastname = "";
         this.email = "";
+        this.hasBought = false;
+    }
+
+    public User(String user,String pswrd,String firstname,String lastname,String email){
+        this(user,pswrd);
+        this.firstname = firstname;
+        this.lastname = lastname;
+        this.email = email;
+        this.hasBought = false;
+
     }
 
     public User(int id,String user,String pswrd,String firstname,String lastname,String email){
@@ -33,6 +46,7 @@ public class User {
         this.firstname = firstname;
         this.lastname = lastname;
         this.email = email;
+        this.hasBought = false;
     }
 
 
@@ -61,6 +75,10 @@ public class User {
         return email;
     }
 
+    public boolean isHasBought() {
+        return hasBought;
+    }
+
 
 
     //Setter methods
@@ -87,5 +105,9 @@ public class User {
 
     public void setEmail(String email) {
         this.email = email;
+    }
+
+    public void setHasBought(boolean hasBought) {
+        this.hasBought = hasBought;
     }
 }
