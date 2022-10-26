@@ -173,15 +173,12 @@ public class UserRepo {
                     rs.getString("last_name"),
                     rs.getString("email"));
 
-
-
-
             }
 
         }catch(SQLException sqlexception){
-            System.out.println("This is the userDAO:");
+            System.out.println("This is the userDAO:" + sqlexception.getMessage());
         }
-
+        return null;
     }
 
 
