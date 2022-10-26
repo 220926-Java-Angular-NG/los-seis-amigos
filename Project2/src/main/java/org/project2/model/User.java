@@ -1,5 +1,18 @@
 package org.project2.model;
 
+
+
+/*
+create table users(
+id serial primary key,
+user_name varchar(20) not null unique,
+first_name varchar(20) not null,
+last_name varchar(20) not null,
+pass_word varchar(50)not null,
+email	varchar(50)not null unique
+);
+
+ */
 public class User {
     private int id;
     private String username;
@@ -39,7 +52,7 @@ public class User {
 
     }
 
-    public User(int id,String user,String pswrd,String firstname,String lastname,String email){
+    public User(int id,String user,String pswrd,String firstname,String lastname,String email)                        {
         this.id = id;
         this.username = user;
         this.password = pswrd;
