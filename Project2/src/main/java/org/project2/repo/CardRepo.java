@@ -78,36 +78,37 @@ public class CardRepo {
 
     private void loadTable() {
         BufferedReader inputFile;
-        String pathToResources = "src/main/resources/";
-        File cardInfoFolder = new File(pathToResources+"cardinfo/");
-        if (!cardInfoFolder.exists()) {
-            cardInfoFolder.mkdirs();
-        }
+        // http://magicplugin.normalitycomics.com/update/cardFiles/
+        // parent url containing the @urlsToCardInfo
+        String[] urlsToCardInfo = {
+                "http://magicplugin.normalitycomics.com/update/cardFiles/commander.txt",
+                "http://magicplugin.normalitycomics.com/update/cardFiles/custom-tokens-for-lackeyccg.txt",
+                "http://magicplugin.normalitycomics.com/update/cardFiles/intro-sets.txt",
+                "http://magicplugin.normalitycomics.com/update/cardFiles/modern-core-sets.txt",
+                "http://magicplugin.normalitycomics.com/update/cardFiles/modern-core-sets2.txt",
+                "http://magicplugin.normalitycomics.com/update/cardFiles/modern-expansions.txt",
+                "http://magicplugin.normalitycomics.com/update/cardFiles/modern-expansions2.txt",
+                "http://magicplugin.normalitycomics.com/update/cardFiles/modern-expansions3.txt",
+                "http://magicplugin.normalitycomics.com/update/cardFiles/modern-only-sets.txt",
+                "http://magicplugin.normalitycomics.com/update/cardFiles/premodern-core-sets.txt",
+                "http://magicplugin.normalitycomics.com/update/cardFiles/premodern-expansions.txt",
+                "http://magicplugin.normalitycomics.com/update/cardFiles/premodern-expansions2.txt",
+                "http://magicplugin.normalitycomics.com/update/cardFiles/promos-and-alternates.txt",
+                "http://magicplugin.normalitycomics.com/update/cardFiles/reprint-only-sets.txt",
+                "http://magicplugin.normalitycomics.com/update/cardFiles/silver-border-and-special.txt",
+                "http://magicplugin.normalitycomics.com/update/cardFiles/supplemental.txt"};
         // Link below contains url's each containing a portion of all card information based of release data
         // http://magicplugin.normalitycomics.com/update/cardFiles/
-        ArrayList<String> sitelist = new ArrayList<String>(); // Hold the 13 paths from url above
-        try {
-            // Hardcoded paths in text file located in resources folder
-            Scanner sc = new Scanner(new File(pathToResources+"sitelist.txt"));
-            // Iterate through
-            while (sc.hasNext()) {
-                String line = sc.nextLine();// Stores line from file in a string literal
-                //System.out.println("From site list file: " + line);// print pathToResources from sitelist
-                sitelist.add(line);// Adds pathToResources into list of url
-                try {
-                    inputFile = new BufferedReader(new InputStreamReader(new URL(line).openStream()));
-                    String lineFromFile;
-                    while ((lineFromFile = inputFile.readLine()) != null) {
-                        //System.out.println(lineFromFile);
-                        this.create(new Card(lineFromFile));
-                    }
-                } catch (IOException e) {
-                    System.out.println(e);
+        for (String line : urlsToCardInfo) {
+            try {
+                inputFile = new BufferedReader(new InputStreamReader(new URL(line).openStream()));
+                String lineFromFile;
+                while ((lineFromFile = inputFile.readLine()) != null) {
+                    this.create(new Card(lineFromFile));
                 }
-                //nc.printMainDir();
+            } catch (IOException e) {
+                System.out.println(e);
             }
-        } catch (Exception e) {
-            System.out.println(e.getMessage());
         }
     }
 
