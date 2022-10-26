@@ -52,6 +52,7 @@ public class UserRepo {
     }
 
 
+    //Might consider to remove it.
     public List<User> getAll() {
         List<User> users = new ArrayList<>();
 
@@ -137,7 +138,7 @@ public class UserRepo {
         return null;
     }
 
-
+    //Might consider to remove it.
     public boolean delete(User user) {
         try{
             String sql = "DELETE FROM users WHERE id=?";
@@ -154,6 +155,8 @@ public class UserRepo {
 
         return false;
     }
+
+
     public User loginUser(User user){
 
         try{
