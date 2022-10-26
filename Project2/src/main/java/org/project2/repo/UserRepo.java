@@ -31,13 +31,14 @@ public class UserRepo {
     public int create(User user) {
 
         try{
-            String sql = "INSERT INTO users (id,first_name,last_name,email,pass_word) VALUES (default,?,?,?,?)";
+            String sql = "INSERT INTO users (id,user_name,first_name,last_name,pass_word,email) VALUES (default,?,?,?,?,?)";
             PreparedStatement pstmt = conn.prepareStatement(sql, Statement.RETURN_GENERATED_KEYS);
 
-            pstmt.setString(1,user.getFirstname());
-            pstmt.setString(2,user.getLastname());
-            pstmt.setString(3,user.getEmail());
+            pstmt.setString(1,user.getUsername());
+            pstmt.setString(2,user.getFirstname());
+            pstmt.setString(3,user.getLastname());
             pstmt.setString(4,user.getPassword());
+            pstmt.setString(5,user.getEmail());
             pstmt.executeUpdate();
             ResultSet rs = pstmt.getGeneratedKeys();
             rs.next();
@@ -51,7 +52,7 @@ public class UserRepo {
 
 
     public List<User> getAll() {
-        List<User> users = new ArrayList<User>();
+        List<User> users = new ArrayList<>();
 
         try{
 
@@ -62,6 +63,7 @@ public class UserRepo {
             while (rs.next()){
                 User user =new User();
                 user.setId(rs.getInt("id"));
+                user.setUsername(rs.getString("username"));
                 user.setFirstname(rs.getString("first_name"));
                 user.setLastname(rs.getString("last_name"));
                 user.setEmail(rs.getString("email"));
@@ -92,6 +94,7 @@ public class UserRepo {
 
             while (rs.next()){
                 user.setId(rs.getInt("id"));
+                user.setUsername(rs.getString("username"));
                 user.setFirstname(rs.getString("first_name"));
                 user.setLastname(rs.getString("last_name"));
                 user.setEmail(rs.getString("email"));
@@ -114,9 +117,10 @@ public class UserRepo {
     public User update(User user) {
 
         try{
-            String sql = "UPDATE users SET email = ? WHERE id=?";
+            String sql = "UPDATE users SET pass_word = ? WHERE id=?";
             PreparedStatement pstmt = conn.prepareStatement(sql,Statement.RETURN_GENERATED_KEYS);
-            pstmt.setString(1,user.getEmail());
+
+            pstmt.setString(1,user.getPassword());
             pstmt.setInt(2,user.getId());
             ResultSet rs = pstmt.executeQuery();
 
@@ -149,6 +153,9 @@ public class UserRepo {
 
         return false;
     }
+
+
+
 
 
 
