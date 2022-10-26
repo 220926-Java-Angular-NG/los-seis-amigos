@@ -1,8 +1,10 @@
 package org.project2;
 
+import org.project2.repo.CardRepo;
+
 public class Main {
     public static void main(String[] args) {
-        System.out.println("Hello world!");
+        CardRepo cardRepo = new CardRepo();
     }
 }
 // command to make docker db for this info "docker run --name magic -e POSTGRES_PASSWORD=123456 -p 5434:5432 -d postgres"

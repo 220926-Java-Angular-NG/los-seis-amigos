@@ -33,7 +33,12 @@ public class CardRepo {
             String sql = "SELECT EXISTS (SELECT FROM cards)";
             PreparedStatement pstmt = con.prepareStatement(sql);
             ResultSet rs = pstmt.executeQuery();
-            return rs.next()?true:false;
+            if(rs.next()){
+                return true;
+            }else{
+                return false;
+            }
+            //return rs.next()?true:false; not sure if this would be preferred by if else above
         } catch (SQLException e) {
             System.out.println(e.getMessage());
             return false;
