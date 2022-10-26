@@ -6,16 +6,40 @@ import org.project2.util.ConnectionManager;
 import java.sql.*;
 
 public class CardRepo {
-// come back and implement crud dom interface
+    // come back and implement crud dom interface
     Connection con;
+
     public CardRepo() {
         try {
             con = ConnectionManager.getConnection();
-            System.out.println(con.getSchema());
+            if (!this.exist()) {
+                this.createTable();
+            }
+            this.loadTable();
+            System.out.println("Current Schema: " + con.getSchema());
         } catch (SQLException e) {
             System.out.println(e.getMessage());
         }
     }
+
+    private void loadTable() {
+    }
+
+    private void createTable() {
+    }
+
+    private boolean exist() {
+        try {
+            String sql = "SELECT EXISTS (SELECT FROM cards)";
+            PreparedStatement pstmt = con.prepareStatement(sql);
+            ResultSet rs = pstmt.executeQuery();
+            return rs.next()?true:false;
+        } catch (SQLException e) {
+            System.out.println(e.getMessage());
+            return false;
+        }
+    }
+
     public int create(Card card) {
         try {
             String sql = "INSERT INTO cards(cardid,name,setname,imagefile,actualset,color,colorid,concost,manavalue,type,power,toughness,loyalty,rarity,text) VALUES (default,?,?,?,?,?,?,?,?,?,?,?,?,?,?)";
