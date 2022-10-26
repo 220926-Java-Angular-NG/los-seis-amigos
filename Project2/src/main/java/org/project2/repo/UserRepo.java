@@ -1,5 +1,6 @@
 package org.project2.repo;
 
+import jdk.nashorn.internal.parser.Scanner;
 import org.project2.model.User;
 import org.project2.util.ConnectionManager;
 import org.slf4j.Logger;
@@ -153,7 +154,35 @@ public class UserRepo {
 
         return false;
     }
+    public User loginUser(User user){
 
+        try{
+
+            String sql = "SELECT * FROM users WHERE email = ?";
+            PreparedStatement pstmt = conn.prepareStatement(sql);
+            pstmt.setString(1, user.getEmail());
+
+            ResultSet rs = pstmt.executeQuery();
+
+            if(rs.next() && rs.getString("pass_word").equals(user.getPassword())){
+
+                return new User(rs.getInt("id"),
+                    rs.getString("user_name"),
+                    rs.getString("pass_word"),
+                    rs.getString("first_name"),
+                    rs.getString("last_name"),
+                    rs.getString("email"));
+
+
+
+
+            }
+
+        }catch(SQLException sqlexception){
+            System.out.println("This is the userDAO:");
+        }
+
+    }
 
 
 
