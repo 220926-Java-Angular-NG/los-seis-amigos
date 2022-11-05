@@ -18,7 +18,8 @@ email	varchar(50)not null unique
 );
 */
 
-@Entity(name = "users")
+@Entity
+@Table(name = "users")
 @Getter
 @Setter
 @NoArgsConstructor

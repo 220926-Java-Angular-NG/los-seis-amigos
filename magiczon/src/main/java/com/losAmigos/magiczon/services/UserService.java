@@ -23,9 +23,8 @@ public class UserService {
 
     public User registerUser(User user){
         String username = user.getUsername();
-        User loginUser = getByUsername(username);
-        if((loginUser!=null)&&(loginUser.getId()!=0)){
-            return null;
+        if(userRepository.existsByUsername(username)){
+            return new User();
         }
 
         return createUser(user);

@@ -6,7 +6,8 @@ import lombok.Setter;
 
 import javax.persistence.*;
 
-@Entity(name = "cards")
+@Entity
+@Table(name = "cards")
 @Getter
 @Setter
 @NoArgsConstructor
@@ -17,6 +18,9 @@ public class Card {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long cardId;
+
+    @Column
     private String name;
 
     @Column

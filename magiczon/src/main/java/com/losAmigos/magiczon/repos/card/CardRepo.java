@@ -22,13 +22,15 @@ public class CardRepo {
     public static CardRepository getCardRepo(){
 
         CardRepo cardRepo = new CardRepo();
+        int i = 0;
 
         do{
             if (cardRepo.tableExits()) {
                 cardRepo.loadTable();
                 break;
             }
-        }while(!cardRepo.tableExits());
+            i++;
+        }while(!cardRepo.tableExits()&&(i<10));
 
         return cardRepo.getCardRepository();
     }
@@ -36,7 +38,9 @@ public class CardRepo {
 
     private Boolean tableExits(){
         try {
-            if(this.cardRepository.count() >= 0) return true;
+            Long count = this.cardRepository.count();
+            System.out.println(count);
+            if(count >= 0) return true;
         } catch (Exception e) {
             System.out.println("ERROR: "+e.getMessage());
         }
