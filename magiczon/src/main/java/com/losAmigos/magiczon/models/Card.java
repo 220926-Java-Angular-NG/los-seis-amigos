@@ -4,7 +4,7 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
-import javax.persistence.Entity;
+import javax.persistence.*;
 
 @Entity(name = "cards")
 @Getter
@@ -13,22 +13,57 @@ import javax.persistence.Entity;
 public class Card {
 
     private String info;
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private String name;
+
+    @Column
     private String setName;
+
+    @Column
     private String imgLocation;
+
+    @Column
     private String actualSet;
+
+    @Column
     private String color;
+
+    @Column
     private String colorID;
+
+    @Column
     private String cost;
+
+    @Column
     private String convertedCost;
+
+    @Column
     private String type;
+
+    @Column
     private String power;
+
+    @Column
     private String toughness;
+
+    @Column
     private String loyalty;
+
+    @Column
     private String rarity;
+
+    @Column
     private String draftQualities;
+
+    @Column
     private String sound;
+
+    @Column
     private String script;
+
+    @Column
     private String text;
 
     public Card(String cardInformation) {
