@@ -15,10 +15,10 @@ public class UserService {
     public User userLogin(User user){
         String username = user.getUsername();
         User loginUser = getByUsername(username);
-        if((loginUser!=null)&&(loginUser.getId()!=0)){
+        if(userRepository.existsByUsername(username)){
             if(user.getPassword().equals(loginUser.getPassword())) return loginUser;
         }
-        return null;
+        return new User();
     }
 
     public User registerUser(User user){
