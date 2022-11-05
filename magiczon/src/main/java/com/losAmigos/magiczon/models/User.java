@@ -32,15 +32,19 @@ public class User {
     @Column(unique = true)
     private String username;
 
+    @Column
     private String password;
 
+    @Column
     private String firstname;
 
+    @Column
     private String lastname;
 
     @Column(unique = true)
     private String email;
 
+    @Column
     private boolean hasBought;
 
 }

@@ -12,6 +12,7 @@ import javax.persistence.*;
 @NoArgsConstructor
 public class Card {
 
+    @Transient
     private String info;
 
     @Id
