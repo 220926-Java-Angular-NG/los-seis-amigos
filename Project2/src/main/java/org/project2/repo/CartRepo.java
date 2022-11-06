@@ -25,7 +25,7 @@ public class CartRepo {
         System.out.println(crepo.addItemToCart(1, 1, 321));
         System.out.println(crepo.addItemToCart(1, 1, 321));
         System.out.println(crepo.getCartItemsByUserId(1));
-//        System.out.println(crepo.emptyUserCartByUserId(1));
+        System.out.println(crepo.emptyUserCartByUserId(1));
         System.out.println(crepo.getCartItemsByUserId(1));
     }
 

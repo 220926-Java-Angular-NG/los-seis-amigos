@@ -13,11 +13,12 @@ import java.io.InputStreamReader;
 import java.net.URL;
 import java.sql.SQLException;
 
+//@NoArgsConstructor
 @RequiredArgsConstructor
 @Getter
 public class CardRepo {
 
-    private CardRepository cardRepository;
+    private final CardRepository cardRepository;
 
 
     public void getCardRepo(){
@@ -53,6 +54,14 @@ public class CardRepo {
         return this.cardRepository.count() == 0;
     }
 
+<<<<<<< HEAD
+=======
+    private boolean isBlank(Card card){
+        if (card.getActualSet()==null||card.getActualSet().equals("")) return true;
+        return false;
+    }
+
+>>>>>>> cardRepoJon
     private void loadTable() {
         BufferedReader inputFile;
         // http://magicplugin.normalitycomics.com/update/cardFiles/
@@ -84,8 +93,14 @@ public class CardRepo {
                     System.out.println(lineFromFile);
                     try {
                         Card card = new Card(lineFromFile);
+<<<<<<< HEAD
                         if (card.getSetName() != null || card.getName() != null)
                             this.cardRepository.save(card);
+=======
+                        if(!isBlank(card)){
+                            if (card.getSetName() != null || card.getName() != null) this.cardRepository.save(card);
+                        }
+>>>>>>> cardRepoJon
                     } catch (DataException e) {
                         System.out.println(e.getMessage());
                     }

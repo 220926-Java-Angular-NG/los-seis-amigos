@@ -18,7 +18,7 @@ public class UserController {
 
     @PostMapping("/register")
     public User createUser(@RequestBody User user){
-
+        System.out.println(user.getFirstname() + " " + user.getLastname());
         return userService.registerUser(user);
     }
 
