@@ -5,6 +5,7 @@ import com.losAmigos.magiczon.models.Card;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.RequiredArgsConstructor;
+import org.hibernate.exception.DataException;
 
 import java.io.BufferedReader;
 import java.io.IOException;
@@ -12,27 +13,28 @@ import java.io.InputStreamReader;
 import java.net.URL;
 import java.sql.SQLException;
 
+//@NoArgsConstructor
 @RequiredArgsConstructor
 @Getter
 public class CardRepo {
 
-    private CardRepository cardRepository;
+    private final CardRepository cardRepository;
 
 
-    public static CardRepository getCardRepo(){
+    public void getCardRepo(){
 
-        CardRepo cardRepo = new CardRepo();
+//        CardRepo cardRepo = new CardRepo();
         int i = 0;
 
         do{
-            if (cardRepo.tableExits()) {
-                cardRepo.loadTable();
+            if (this.tableExits()) {
+                this.loadTable();
                 break;
             }
             i++;
-        }while(!cardRepo.tableExits()&&(i<10));
+        }while(!this.tableExits()&&(i<10));
 
-        return cardRepo.getCardRepository();
+//        return this.getCardRepository();
     }
 
 
@@ -75,7 +77,14 @@ public class CardRepo {
                 inputFile = new BufferedReader(new InputStreamReader(new URL(line).openStream()));
                 String lineFromFile;
                 while ((lineFromFile = inputFile.readLine()) != null) {
-                    this.cardRepository.save(new Card(lineFromFile));
+                    System.out.println(lineFromFile);
+                    try {
+                        Card card = new Card(lineFromFile);
+                        if (card.getSetName() != null || card.getName() != null)
+                            this.cardRepository.save(card);
+                    } catch (DataException e) {
+                        System.out.println(e.getMessage());
+                    }
                 }
             } catch (IOException e) {
                 System.out.println(e);

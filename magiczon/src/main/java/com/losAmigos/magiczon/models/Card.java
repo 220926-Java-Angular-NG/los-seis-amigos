@@ -5,6 +5,7 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 import javax.persistence.*;
+import javax.validation.constraints.NotNull;
 
 @Entity
 @Table(name = "cards")
@@ -13,71 +14,73 @@ import javax.persistence.*;
 @NoArgsConstructor
 public class Card {
 
-    @Transient
-    private String info;
+//    @Transient
+//    private String info;
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long cardId;
 
-    @Column
+    @Column(length = 141)
+    @NotNull
     private String name;
 
-    @Column
+    @Column(length = 13)
+    @NotNull
     private String setName;
 
-    @Column
+    @Column(length = 51)
     private String imgLocation;
 
-    @Column
+    @Column(length = 4)
     private String actualSet;
 
-    @Column
+    @Column(length = 5)
     private String color;
 
-    @Column
+    @Column(length = 5)
     private String colorID;
 
-    @Column
+    @Column(length = 46)
     private String cost;
 
-    @Column
+    @Column(length = 10)
     private String convertedCost;
 
-    @Column
+    @Column(length = 49)
     private String type;
 
-    @Column
+    @Column(length = 10)
     private String power;
 
-    @Column
+    @Column(length = 3)
     private String toughness;
 
-    @Column
+    @Column(length = 1)
     private String loyalty;
 
-    @Column
+    @Column(length = 1)
     private String rarity;
 
-    @Column
+//    @Column(length = 5000)
     private String draftQualities;
 
-    @Column
+//    @Column(length = 5000)
     private String sound;
 
-    @Column
+    @Column(length = 1500)
     private String script;
 
-    @Column
+    @Column(length = 907)
     private String text;
 
     public Card(String cardInformation) {
-        this.info = cardInformation;
-        loadInfo();
+//        this.info = cardInformation;
+        loadInfo(cardInformation);
     }
 
-    private void loadInfo() {
-        String[] sl = info.split("	");// Separated line
+    private void loadInfo(String infoReceived) {
+        String[] sl = infoReceived.split("	");// Separated line
 
         //System.out.println(sl.length != 17);
 
@@ -91,10 +94,10 @@ public class Card {
                     System.out.println("SPACE!");
                 switch (i) {
                     case 0:
-                        this.name = sl[i];
+                        this.name = sl[i] != null ? sl[i] : " ";
                         break;
                     case 1:
-                        this.setName = sl[i];
+                        this.setName = sl[i] != null ? sl[i] : " ";
                         break;
                     case 2:
                         this.imgLocation = sl[i];
@@ -147,6 +150,9 @@ public class Card {
             }
             //System.out.println();
         }
+
+        if (this.name == null) this.name = "";
+        if (this.setName == null) this.setName = "";
 
     }
 
