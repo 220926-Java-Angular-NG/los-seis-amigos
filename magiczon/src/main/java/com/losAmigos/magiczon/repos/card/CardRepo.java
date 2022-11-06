@@ -22,6 +22,7 @@ public class CardRepo {
 
 
     public void getCardRepo(){
+        if (!needToPopulate()) return;
 
 //        CardRepo cardRepo = new CardRepo();
         int i = 0;
@@ -47,6 +48,10 @@ public class CardRepo {
             System.out.println("ERROR: "+e.getMessage());
         }
         return false;
+    }
+
+    private boolean needToPopulate() {
+        return this.cardRepository.count() == 0;
     }
 
     private void loadTable() {
