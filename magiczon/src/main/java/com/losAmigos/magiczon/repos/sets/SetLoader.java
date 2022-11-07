@@ -13,39 +13,9 @@ public class SetLoader {
 
 
     public void getSetRepo() {
-        if (!needToPopulate()) return;
-
-//        CardRepo cardRepo = new CardRepo();
-        int i = 0;
-
-        do {
-            if (this.tableExits()) {
-                this.loadTable();
-                break;
-            }
-            i++;
-        } while (!this.tableExits() && (i < 10));
-
-//        return this.getCardRepository();
+        if (!(this.packRepository.count() < 112)) return;
+        this.loadTable();
     }
-
-
-    private Boolean tableExits() {
-        try {
-            Long count = this.packRepository.count();
-            System.out.println(count);
-            if (count >= 0) return true;
-        } catch (Exception e) {
-            System.out.println("ERROR: " + e.getMessage());
-        }
-        return false;
-    }
-
-    private boolean needToPopulate() {
-        return this.packRepository.count() != 112;
-    }
-
-
 
     private void loadTable() {
         BufferedReader inputFile;
