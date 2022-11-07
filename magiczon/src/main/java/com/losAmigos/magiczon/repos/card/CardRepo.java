@@ -21,43 +21,11 @@ public class CardRepo {
     private final CardRepository cardRepository;
 
 
-    public void getCardRepo(){
-        if (!needToPopulate()) return;
-
-//        CardRepo cardRepo = new CardRepo();
-        int i = 0;
-
-        do{
-            if (this.tableExits()) {
-                this.loadTable();
-                break;
-            }
-            i++;
-        }while(!this.tableExits()&&(i<10));
-
-//        return this.getCardRepository();
+    public void getCardRepo() {
+        if (!(this.cardRepository.count() < 46820)) return;
+        this.loadTable();
     }
 
-
-    private Boolean tableExits(){
-        try {
-            Long count = this.cardRepository.count();
-            System.out.println(count);
-            if(count >= 0) return true;
-        } catch (Exception e) {
-            System.out.println("ERROR: "+e.getMessage());
-        }
-        return false;
-    }
-
-    private boolean needToPopulate() {
-        return this.cardRepository.count() == 0;
-    }
-
-    private boolean isBlank(Card card){
-        if (card.getActualSet()==null||card.getActualSet().equals("")) return true;
-        return false;
-    }
 
     private void loadTable() {
         BufferedReader inputFile;
@@ -87,11 +55,12 @@ public class CardRepo {
                 inputFile = new BufferedReader(new InputStreamReader(new URL(line).openStream()));
                 String lineFromFile;
                 while ((lineFromFile = inputFile.readLine()) != null) {
-                    System.out.println(lineFromFile);
+                    //System.out.println(lineFromFile);
                     try {
                         Card card = new Card(lineFromFile);
-                        if(!isBlank(card)){
-                            if (card.getSetName() != null || card.getName() != null) this.cardRepository.save(card);
+
+                        if (card.getImgLocation() != null) {
+                            this.cardRepository.save(card);
                         }
                     } catch (DataException e) {
                         System.out.println(e.getMessage());

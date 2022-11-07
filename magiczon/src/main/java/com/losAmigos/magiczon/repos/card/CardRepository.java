@@ -14,4 +14,6 @@ public interface CardRepository extends JpaRepository<Card,Long> {
     @Query("SELECT DISTINCT d.setName FROM Card d")
     List<String> findDistinctSetNames();
 
+    //get cards by set -> cards left get only { u(uncommon) - c(common) - r(rare) - m(mythic rare)}
+
 }
