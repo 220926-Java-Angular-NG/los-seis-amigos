@@ -17,9 +17,9 @@ public class Card {
 //    @Transient
 //    private String info;
 
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long cardId;
+
+//    @GeneratedValue(strategy = GenerationType.IDENTITY)
+//    private Long cardId;
 
     @Column(length = 141)
     @NotNull
@@ -29,6 +29,7 @@ public class Card {
     @NotNull
     private String setName;
 
+    @Id
     @Column(length = 51)
     private String imgLocation;
 
@@ -47,7 +48,7 @@ public class Card {
     @Column(length = 10)
     private String convertedCost;
 
-    @Column(length = 49)
+    @Column(length = 55)
     private String type;
 
     @Column(length = 10)
@@ -63,13 +64,13 @@ public class Card {
     private String rarity;
 
 //    @Column(length = 5000)
-    private String draftQualities;
+   // private String draftQualities;
 
 //    @Column(length = 5000)
-    private String sound;
+    //private String sound;
 
-    @Column(length = 1500)
-    private String script;
+    //@Column(length = 1500)
+    //private String script;
 
     @Column(length = 907)
     private String text;
@@ -87,7 +88,7 @@ public class Card {
 
         if (sl[0].equals("Name")) {
             //dont load into database if its the header
-            System.out.println("Second value form table: " + sl[1]);
+            System.out.println("ignores line containing metadata: ");
         } else {
             for (int i = 0; i < sl.length; i++) {
                 if (sl[i].equals(" "))
@@ -133,13 +134,13 @@ public class Card {
                         this.rarity = sl[i];
                         break;
                     case 13:
-                        this.draftQualities = sl[i];
+                        //this.draftQualities = sl[i];
                         break;
                     case 14:
-                        this.sound = sl[i];
+                        //this.sound = sl[i];
                         break;
                     case 15:
-                        this.script = sl[i];
+                        //this.script = sl[i];
                         break;
                     case 16:
                         this.text = sl[i];
