@@ -19,6 +19,7 @@ import java.sql.SQLException;
 public class CardRepo {
 
     private final CardRepository cardRepository;
+    private boolean keepGoing = false;
 
 
     public void getCardRepo(){
