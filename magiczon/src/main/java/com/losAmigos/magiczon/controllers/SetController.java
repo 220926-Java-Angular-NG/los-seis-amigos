@@ -21,4 +21,16 @@ public class SetController {
     public List<String> setCodes(){
         return setService.findSetcodes();
     }
+
+//    @GetMapping("/pack_image/{code}")
+//    public String getUserByEmail(@PathVariable String code){
+//        userRepository.findById(id).orElseThrow(() -> new RuntimeException("user not found with id " + id));
+//
+//        return setService.getSetCode(code);
+//    }
+
+//    @GetMapping("/email/{email}")
+//    public User getUserByEmail(@PathVariable String email){
+//        return userService.getUserByEmail(email);
+//    }
 }

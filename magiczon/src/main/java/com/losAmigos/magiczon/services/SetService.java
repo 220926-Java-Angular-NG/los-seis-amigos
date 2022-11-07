@@ -30,4 +30,9 @@ public class SetService {
     public List<String> findSetcodes(){
         return setRepository.findSetcodes();
     }
+
+//    public String getSetCode(String code) {
+//        setRepository.findBySetcode(code);
+//        System.out.println();
+//    }
 }
