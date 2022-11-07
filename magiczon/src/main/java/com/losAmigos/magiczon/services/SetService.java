@@ -27,4 +27,7 @@ public class SetService {
     public List<String> findSet_Names(){
         return setRepository.findSet_Names();
     }
+    public List<String> findSetcodes(){
+        return setRepository.findSetcodes();
+    }
 }

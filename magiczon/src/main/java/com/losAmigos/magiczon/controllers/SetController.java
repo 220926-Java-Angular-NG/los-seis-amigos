@@ -13,8 +13,12 @@ import java.util.List;
 public class SetController {
     private final SetService setService;
 
-    @GetMapping("/")
-    public List<String> userLogin(){
+    @GetMapping("/names")
+    public List<String> setNames(){
         return setService.findSet_Names();
+    }
+    @GetMapping("/codes")
+    public List<String> setCodes(){
+        return setService.findSetcodes();
     }
 }

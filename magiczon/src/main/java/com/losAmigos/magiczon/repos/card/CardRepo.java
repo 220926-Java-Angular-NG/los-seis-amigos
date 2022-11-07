@@ -87,23 +87,19 @@ public class CardRepo {
                 inputFile = new BufferedReader(new InputStreamReader(new URL(line).openStream()));
                 String lineFromFile;
                 while ((lineFromFile = inputFile.readLine()) != null) {
-                    System.out.println(lineFromFile);
+                    //System.out.println(lineFromFile);
                     try {
                         Card card = new Card(lineFromFile);
 
-                        if(card.getImgLocation()!=null)
-                            this.cardRepository.save(card);
+                        if(card.getImgLocation()!=null){
+                            //this.cardRepository.save(card);
+                        }
 //                        if (card.getSetName() != null || card.getName() != null)
 //                            this.cardRepository.save(card);
 //
 //                        if(!isBlank(card)){
 //                            if (card.getSetName() != null || card.getName() != null) this.cardRepository.save(card);
 //                        }
-
-
-                        if(!isBlank(card)){
-                            if (card.getSetName() != null || card.getName() != null) this.cardRepository.save(card);
-                        }
 
                     } catch (DataException e) {
                         System.out.println(e.getMessage());
