@@ -1,0 +1,113 @@
+Arabian Nights,https://52f4e29a8321344e30ae-0f55c9129972ac85d6b1f4e703468e6b.ssl.cf2.rackcdn.com/products/pictures/79658.jpg,ARN
+Antiquities,https://product-images.tcgplayer.com/27325.jpg,ATQ
+Legends,https://product-images.tcgplayer.com/27348.jpg,LEG
+The Dark,https://m.media-amazon.com/images/I/51hrXHOi7TL.jpg,DRK
+Fallen Empires,https://m.media-amazon.com/images/I/41DdtfYROdL._AC_SY580_.jpg,FEM
+Alliances,http://lib.store.yahoo.net/lib/inmint/magic-alliances-pack.jpg,ALL
+Ice Age,https://52f4e29a8321344e30ae-0f55c9129972ac85d6b1f4e703468e6b.ssl.cf2.rackcdn.com/products/pictures/1110897.jpg,ICE
+Coldsnap,https://52f4e29a8321344e30ae-0f55c9129972ac85d6b1f4e703468e6b.ssl.cf2.rackcdn.com/products/pictures/141888.jpg,CSP
+Mirage,https://i.ebayimg.com/images/g/FQUAAOSw1a1g1gDa/s-l640.jpg,MIR
+Visions,https://crystal-cdn4.crystalcommerce.com/photos/30678/CnrmyF2kmtqMCyvn.jpg,VIS
+Weatherlight,https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTCV6wU_dn8RH8TJc66n78lTHposKWkbuOXCQ&usqp=CAU,WTH
+Tempest,https://m.media-amazon.com/images/I/51iJIWVA9WL._AC_SY580_.jpg,TMP
+Stronghold,https://crystal-cdn1.crystalcommerce.com/photos/30675/he5UU4rxVQWp5ubU.jpg,STH
+Exodus,https://m.media-amazon.com/images/I/61hDPC3tuVL.jpg,EXO
+Uzra's Saga,https://crystal-cdn3.crystalcommerce.com/photos/30673/large/AhspWqB3qAGZQR43.jpg,USG
+Urza's Legacy,https://52f4e29a8321344e30ae-0f55c9129972ac85d6b1f4e703468e6b.ssl.cf2.rackcdn.com/products/pictures/90164.jpg,ULG
+Urza's Destiny,https://crystal-cdn2.crystalcommerce.com/photos/30671/large/nMBbF8FvL4AhYjV8.jpg,UDS
+Mercadian Masques,https://i.ebayimg.com/images/g/6csAAOSwL75hZcHS/s-l500.jpg,MMQ
+Nemesis,https://product-images.tcgplayer.com/27355.jpg,NEM
+Prophecy,https://i.ebayimg.com/images/g/aJsAAOSwTM5Y4F1R/s-l500.jpg,PCY
+Invasion,https://m.media-amazon.com/images/I/51Qxnp3pyHL._AC_SY580_.jpg,INV
+Planeshift,https://i.ebayimg.com/images/g/s1YAAOSwmcJdw9df/s-l500.jpg,PLS
+Apocalypse,https://i.ebayimg.com/images/g/k50AAOSwDuFhD~cr/s-l640.jpg,APC
+Odessey,https://product-images.tcgplayer.com/27356.jpg,ODY
+Torment,https://i.ebayimg.com/images/g/uGkAAOSwQ0teTSrk/s-l600.jpg,TOR
+Judgement,https://52f4e29a8321344e30ae-0f55c9129972ac85d6b1f4e703468e6b.ssl.cf2.rackcdn.com/products/pictures/107761.jpg,JUD
+Onslaught,https://crystal-cdn1.crystalcommerce.com/photos/30661/large/DYMw8Lv3AVHkPsYm.jpg,ONS
+Legions,https://tools.toywiz.com/_images/_webp/_products/lg/maggatlegboo1.webp,LGN
+Scourge,https://tools.toywiz.com/_images/_webp/_products/lg/magascbopalo.webp,SCG
+Mirrodin,https://crystal-cdn4.crystalcommerce.com/photos/30658/uZyvJDP3RZJ3ZQwE.jpg,MRD
+Darksteel,https://crystal-cdn1.crystalcommerce.com/photos/30657/NwPQBxSSckSg4m2P.jpg,DST
+Fith Dawn,https://m.media-amazon.com/images/I/511NE2MECCL.jpg,5DN
+Champions of kamigawa,https://m.media-amazon.com/images/I/51MNTZ90GNL._AC_SY580_.jpg,CHK
+Betrayers of Kamigawa,https://tools.toywiz.com/_images/_webp/_products/lg/betrayboost.webp,BOK
+Saviors of Kamigawa,https://cdn1.mtggoldfish.com/images/gf/Saviors%2Bof%2BKamigawa%2BBooster%2BPack%2B%253Csealed%253E%2B%255BSOK%255D.jpg,SOK
+Ravnica: City of Guilds,https://www.mtgstand.com/images/sealedproducts/359.png,RAV
+Guildpact,https://product-images.tcgplayer.com/27343.jpg,GPT
+Dissension,https://tools.toywiz.com/_images/_webp/_products/lg/magicdissentinboosterpack.webp,DIS
+Time Spiral,https://product-images.tcgplayer.com/27372.jpg,TSP
+Planar chaos,https://media.magic.wizards.com/image_legacy_migration/magic/images/mtgcom/products/planarchaos/PLCBooster1.jpg,PLC
+Future Sight,https://m.media-amazon.com/images/I/51judRyrMlL._AC_SY580_.jpg,FUT
+Lorwyn,https://product-images.tcgplayer.com/27350.jpg,LRW
+Morningtide,https://i.ebayimg.com/images/g/XVoAAOSwso5iVwWO/s-l500.jpg,MOR
+Shadowmoor,https://i.ebayimg.com/images/g/xykAAOSwZbhjBYdY/s-l500.jpg,SHM
+Eventide,https://product-images.tcgplayer.com/27336.jpg,EVE
+Shards of alara,https://52f4e29a8321344e30ae-0f55c9129972ac85d6b1f4e703468e6b.ssl.cf2.rackcdn.com/products/pictures/183783.jpg,ALA
+Conflux,https://product-images.tcgplayer.com/108337.jpg,CON
+Alara Reborn,https://m.media-amazon.com/images/I/51mgM3WG+jL.jpg,ARB
+Zendikar,https://media.magic.wizards.com/image_legacy_migration/mtg/images/daily/arcana/256_ZENBooster1.jpg,ZEN
+Worldwake,https://media.magic.wizards.com/image_legacy_migration/mtg/images/daily/arcana/344_boosterpack3.jpg,WWK
+Rise of the Eldrazi,https://media.magic.wizards.com/image_legacy_migration/mtg/images/daily/arcana/403_bpack2.jpg,ROE
+Scars of Mirrodin,https://www.kingwoodhobbies.com/wp-content/uploads/2020/07/WCMTGSOMb.jpg,SOM
+Mirrodin Besiged,https://product-images.tcgplayer.com/39108.jpg,MBS
+New Phyrexia,https://product-images.tcgplayer.com/39409.jpg,NPH
+Innistrad,https://encrypted-tbn1.gstatic.com/shopping?q=tbn:ANd9GcTussFquzIB7NZdlNDdKo5TGOaU2bATRLTIx-eSeK1MD03rP3yd7HNvA17QZRgnsCr7kN4svaA2Ag8iadbN-VjLiAkCz1knxw,ISD
+Dark Ascension,https://product-images.tcgplayer.com/57583.jpg,DKA
+Avacyn Restored,https://product-images.tcgplayer.com/58056.jpg,AVR
+Return to Ravnica,https://tools.toywiz.com/_images/_webp/_products/lg/returntoravnica5pack.webp,RTR
+Gatecrash,https://product-images.tcgplayer.com/67313.jpg,GTC
+Dragon's Maze,https://m.media-amazon.com/images/I/51xKB-YM-ZL._AC_SY580_.jpg,DGM
+Theros,https://d33ih5exiackol.cloudfront.net/images/014837.jpg,THS
+Born of the Gods,https://encrypted-tbn2.gstatic.com/shopping?q=tbn:ANd9GcTI7IJ4Y9mTKS6VFm7xt6CUaWPlUl6sMt4zq4T4fCGt882lwUI5i9HJVbzhMru5iT-vziNhB7SH35Begj2O3GAmIglM0fFB2g,BNG
+Journey into Nyx,https://cdn.shopify.com/s/files/1/0510/3052/4074/products/Booster_5f842e59-8128-4770-9771-0150c430d11b_1024x1024@2x.jpg?v=1605551437,JOU
+Khans of Tarkir,https://encrypted-tbn3.gstatic.com/shopping?q=tbn:ANd9GcQjrUxdzOd4kjcAgk77DudbyY2C4ZddTp582dOo_UFL_HuTDY3IQZn9QpaUG5Mh2fjIScfBAAH75QK9P_r7gH0CWnKjFrQx-w,KTK
+Fate Reforged,https://i.ebayimg.com/images/g/~NEAAOSwZeJiVwWK/s-l500.jpg,FRF
+Dragons of Tarkir,https://tools.toywiz.com/_images/_webp/_products/lg/dragonsoftarkirboosterpack-inset1.webp,DTK
+Battle for Zendikar,https://images-na.ssl-images-amazon.com/images/I/51cu70EZ3jL._AC_SY450_.jpg,BFZ
+Oath of the Gatewatch,https://cdn.shopify.com/s/files/1/0608/6413/5396/products/45f0b3c36e07acdf293b50c8db2651c59064a795.jpg?v=1643891267,OGW
+Shadows over Innistrad ,https://i5.walmartimages.com/asr/5c62c0f0-1dbf-4bee-a3a1-af41ca017f6b_1.9481269a35bb9cc04dde4c416f53f029.jpeg,SOI
+Eldritch Moon,https://52f4e29a8321344e30ae-0f55c9129972ac85d6b1f4e703468e6b.ssl.cf2.rackcdn.com/products/pictures/1096460.jpg,EMN
+Kaladesh,https://m.media-amazon.com/images/I/51Xfkw0F++L._AC_SY580_.jpg,KLD
+Aether Revolt,https://52f4e29a8321344e30ae-0f55c9129972ac85d6b1f4e703468e6b.ssl.cf2.rackcdn.com/products/pictures/1096472.jpg,AER
+Amonkhet,https://cdn.shopify.com/s/files/1/0235/2457/3231/products/amonkhet_boost_pack_1.jpg?v=1572453303,AKH
+Hour of Devastation,https://m.media-amazon.com/images/I/51Wntd13P-L._AC_SY580_.jpg,HOU
+Ixalan,https://d1rw89lz12ur5s.cloudfront.net/photo/collectorscache/file/756122/MTGXLN_EN_Bstr_01_01.png?1506531146,XLN
+Rivals of Ixalan,https://crystal-cdn3.crystalcommerce.com/photos/6377971/MTGRIX_EN_Bstr_01_01.png,RIX
+Dominaria,https://product-images.tcgplayer.com/158425.jpg,DOM
+Guilds of Ravnica,https://d1rw89lz12ur5s.cloudfront.net/photo/collectorscache/file/f6ceddb0b09811e8a0b00191c12bae9d/grn%20pack.jpg,GRN
+Ravnica Allegiance,https://cdn.shopify.com/s/files/1/0341/3465/5114/products/qpRrZqqSRh.png?v=1585102405,RAN
+War of the Spark,https://tools.toywiz.com/_images/_webp/_products/lg/warofthesparkboosterpack.webp,WAR
+Throne of Eldraine,https://crystal-cdn1.crystalcommerce.com/photos/6520682/toe-boosterpack.jpg,ELD
+Theros Beyond Death,https://product-images.tcgplayer.com/202299.jpg,THB
+Ikoria: Lair of Behemoths,https://vgmx.com/wp-content/uploads/2020/04/MTGIKO_EN_Bstr_01_03.png,IKO
+Zendikar Rising,https://crystal-cdn1.crystalcommerce.com/photos/6592483/MTGZNR_EN_DrftBstr_01_01.jpg,ZNR
+Kaldheim,https://media.wizards.com/2020/images/daily/en_n71l8BC0uy.png,KHM
+Strixhaven: School of Mages,https://cdn.shopify.com/s/files/1/0251/0979/0766/products/MTGSTX_EN_Bstr_Set_01_02_1.png?v=1619116901,STX
+Dungeons & Dragons: Adventures in the Forgotten Realms,https://product-images.tcgplayer.com/fit-in/437x437/238731.jpg,AFR
+Innistrad: Midnight Hunt,https://cdn.shopify.com/s/files/1/0561/0376/4010/products/758787ac9517aa61ca58778e16e468f4a6f8d443_800x.png?v=1644278805,MID
+Innistrad: Crimson Vow,https://cdn.shopify.com/s/files/1/0614/4684/8740/products/06a392ea-d3ef-5935-8114-a40be5c64242_dddd0049-1486-4556-8f87-21fc2c1d21c5_800x.png?v=1642117942,VOW
+Kamigawa: Neon Dynasty,https://cdn.shopify.com/s/files/1/0561/0376/4010/products/105a1f4d-8a56-5747-8cd1-491caced6abd_1024x.png?v=1644279286,NEO
+Streets of New Capenna,https://cdn11.bigcommerce.com/s-6k3asdl2tq/images/stencil/1280x1280/products/13715/11704/1__04198.1664465530.png?c=1,SNC
+Dominaria United,https://product-images.tcgplayer.com/275405.jpg,DMU
+Limited Edition Alpha,https://dyn1.heritagestatic.com/lf?set=path%5B2%2F4%2F8%2F1%2F0%2F24810570%5D&call=url%5Bfile%3Aproduct.chain%5D,LEA
+Limited Edition Beta,https://cdn.shopify.com/s/files/1/0561/0376/4010/products/3f839309-16c2-504e-9e47-3293717bb435_cc317d0a-c6bb-44bb-a860-4ad8d3abc00f_800x.png?v=1644279103,LEB
+Unlimited Edition,https://52f4e29a8321344e30ae-0f55c9129972ac85d6b1f4e703468e6b.ssl.cf2.rackcdn.com/products/pictures/90084.jpg,2ED
+Revised Edition,https://product-images.tcgplayer.com/27365.jpg,3ED
+Fourth Edition,https://i.ebayimg.com/images/g/id8AAOSwve5daok4/s-l600.jpg,4ED
+ Fifth Edition,https://i.ebayimg.com/images/g/-IoAAOSwA19gzLH2/s-l640.jpg,5ED
+Classic Sixth Edition,https://m.media-amazon.com/images/I/517MGZVNW1L._AC_SY580_.jpg,6ED
+Seventh Edition,https://i.ebayimg.com/images/g/DfwAAOSwoDxgcGHY/s-l640.jpg,7ED
+Eighth Edition,https://crystal-cdn2.crystalcommerce.com/photos/30690/VO24b24Vk3KXLdBD.jpg,8ED
+Ninth Edition,https://i.ebayimg.com/images/g/ovwAAOSwdOxeTaEX/s-l600.jpg,9ED
+Tenth Edition,https://i.ebayimg.com/images/g/i7YAAOSwFiZetxL-/s-l640.jpg,10E
+Magic 2010,https://i.ebayimg.com/images/g/VvgAAOSwfv5hhKON/s-l1600.jpg,M10
+Magic 2011,https://product-images.tcgplayer.com/35374.jpg,M11
+Magic 2012,https://cdn11.bigcommerce.com/s-0kvv9/images/stencil/550x550/products/202535/285940/magicm12boosterpack__34480.1519948467.jpg?c=2,M12
+Magic 2013,https://product-images.tcgplayer.com/59123.jpg,M13
+Magic 2014,https://product-images.tcgplayer.com/69245.jpg,M14
+Magic 2015,https://i.ebayimg.com/images/g/JbUAAOSw71NgGdPH/s-l500.jpg,M15
+Magic Origins,https://tools.toywiz.com/_images/_webp/_products/lg/magicoriginsboosterpack.webp,ORI
+Core Set 2019,https://i.ebayimg.com/images/g/DowAAOSw7wZdK~6H/s-l500.png,M19
+Core Set 2020,https://cdn.shoplightspeed.com/shops/626940/files/19675874/wizards-of-the-coast-magic-the-gathering-booster-p.jpg,M20
+Core Set 2021,https://darksidecomics.s3.us-east-2.amazonaws.com/2020/06/MTGM21_EN_Bstr_01_02.png,M21

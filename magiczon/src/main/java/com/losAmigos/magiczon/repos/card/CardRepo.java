@@ -51,7 +51,7 @@ public class CardRepo {
     }
 
     private boolean needToPopulate() {
-        return this.cardRepository.count() == 0;
+        return this.cardRepository.count() != 46791;
     }
 
     private boolean isBlank(Card card){
@@ -90,9 +90,21 @@ public class CardRepo {
                     System.out.println(lineFromFile);
                     try {
                         Card card = new Card(lineFromFile);
+
+                        if(card.getImgLocation()!=null)
+                            this.cardRepository.save(card);
+//                        if (card.getSetName() != null || card.getName() != null)
+//                            this.cardRepository.save(card);
+//
+//                        if(!isBlank(card)){
+//                            if (card.getSetName() != null || card.getName() != null) this.cardRepository.save(card);
+//                        }
+
+
                         if(!isBlank(card)){
                             if (card.getSetName() != null || card.getName() != null) this.cardRepository.save(card);
                         }
+
                     } catch (DataException e) {
                         System.out.println(e.getMessage());
                     }
