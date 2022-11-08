@@ -24,6 +24,8 @@ public class CardsOwnedService {
 
     public CardsOwned addToCollection(Long userId,String img){
 
+        System.out.println(cardsOwnedRepository.existsByUserIdAndImgLocation(userId,img));
+
         if(cardsOwnedRepository.existsByUserIdAndImgLocation(userId,img)){
             Long entryId = cardsOwnedRepository.findEntryIdByUserIdAndImgLocation(userId,img);
             System.out.println(entryId);
