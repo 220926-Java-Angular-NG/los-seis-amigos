@@ -17,23 +17,19 @@ public class CardsOwnedService {
     private final CardsOwnedRepository cardsOwnedRepository;
 
 
-    public List<CardsOwned> getUserCollection( Long id){
+    public List<CardsOwned> getUserCollection(Long id){
         return cardsOwnedRepository.findByUserId(id)
                 .orElseThrow(() -> new ResourceNotFoundException("Collections not found with user id: " + id));
     }
 
     public CardsOwned addToCollection(Long userId,String img){
 
-        System.out.println(cardsOwnedRepository.existsByUserIdAndImgLocation(userId,img));
-
         if(cardsOwnedRepository.existsByUserIdAndImgLocation(userId,img)){
             Long entryId = cardsOwnedRepository.findEntryIdByUserIdAndImgLocation(userId,img);
-            System.out.println(entryId);
-
-            cardsOwnedRepository.incrementQuantity(entryId);
-
-            return cardsOwnedRepository.findById(entryId)
-                    .orElseThrow(() -> new ResourceNotFoundException("Collection not found with user id: " + userId));
+            CardsOwned updatedCol = cardsOwnedRepository.findById(entryId).
+                    orElseThrow(() -> new RuntimeException("Could not update collection with user id " + userId));
+            updatedCol.increment();
+            return cardsOwnedRepository.save(updatedCol);
         }else{
             CardsOwned newCol = new CardsOwned();
             newCol.setImgLocation(img);

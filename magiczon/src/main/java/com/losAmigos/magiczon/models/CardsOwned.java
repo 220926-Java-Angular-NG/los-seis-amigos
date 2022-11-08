@@ -26,6 +26,10 @@ public class CardsOwned {
     @Column
     private Integer quantity;
 
+    public void increment(){
+        this.quantity++;
+    }
+
 
 
 
