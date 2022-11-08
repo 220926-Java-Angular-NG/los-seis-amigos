@@ -18,8 +18,8 @@ public class CardsOwnedController {
 
     @GetMapping("/userId={userId}/display")
     @ResponseBody
-    public List<CardsOwned> getUserCollection(){
-        return cardsOwnedService.getAllCollections();
+    public List<CardsOwned> getUserCollection(@PathVariable Long userId){
+        return cardsOwnedService.getUserCollection(userId);
     }
 
     @PostMapping("/userId={userId}/add-card")
