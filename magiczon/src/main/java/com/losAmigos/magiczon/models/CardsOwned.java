@@ -9,7 +9,7 @@ import javax.validation.constraints.NotNull;
 @Table(name = "cards_owned")
 @Getter
 @Setter
-@NoArgsConstructor
+@ToString
 @RequiredArgsConstructor
 public class CardsOwned {
 

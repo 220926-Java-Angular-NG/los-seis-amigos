@@ -6,6 +6,7 @@ import com.losAmigos.magiczon.repos.CardsOwnedRepository;
 import com.losAmigos.magiczon.util.ResourceNotFoundException;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
+import org.springframework.web.bind.annotation.PathVariable;
 
 import java.util.List;
 
@@ -15,27 +16,42 @@ public class CardsOwnedService {
 
     private final CardsOwnedRepository cardsOwnedRepository;
 
-    public CardsOwned addToCollection(Long id,String img){
 
-        if(cardsOwnedRepository.existsByUseridAndImglocation(id,img)){
-            cardsOwnedRepository.incrementQuantity(id,img);
-            return cardsOwnedRepository.findByUseridAndImglocation(id,img)
-                    .orElseThrow(() -> new ResourceNotFoundException(
-                            "Could not find/update collection with user id " + id));
+    public List<CardsOwned> getUserCollection( Long id){
+        return cardsOwnedRepository.findByUserId(id)
+                .orElseThrow(() -> new ResourceNotFoundException("Collections not found with user id: " + id));
+    }
+
+    public CardsOwned addToCollection(Long userId,String img){
+
+        if(cardsOwnedRepository.existsByUserIdAndImgLocation(userId,img)){
+            Long entryId = cardsOwnedRepository.findEntryIdByUserIdAndImgLocation(userId,img);
+            System.out.println(entryId);
+
+            cardsOwnedRepository.incrementQuantity(entryId);
+
+            return cardsOwnedRepository.findById(entryId)
+                    .orElseThrow(() -> new ResourceNotFoundException("Collection not found with user id: " + userId));
+        }else{
+            CardsOwned newCol = new CardsOwned();
+            newCol.setImgLocation(img);
+            newCol.setUserId(userId);
+            newCol.setQuantity(1);
+            System.out.println(newCol.toString());
+            return addNewCollection(newCol);
         }
-        CardsOwned cardsOwned = new CardsOwned();
-        cardsOwned.setUserId(id);
-        cardsOwned.setImgLocation(img);
-        cardsOwned.setQuantity(1);
-        return cardsOwnedRepository.save(cardsOwned);
+
 
     }
 
-    public List<CardsOwned> getUserCollection(User user){
-        return getUserCollection(user.getId());
+
+
+    private CardsOwned addNewCollection(CardsOwned collection){
+        return cardsOwnedRepository.save(collection);
     }
 
-    public List<CardsOwned> getUserCollection(Long id){
-        return cardsOwnedRepository.findByUserid(id);
+    public List<CardsOwned> getAllCollections(){
+        return cardsOwnedRepository.findAll();
     }
+
 }

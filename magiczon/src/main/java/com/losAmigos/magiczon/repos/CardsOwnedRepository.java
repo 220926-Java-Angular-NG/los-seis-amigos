@@ -11,17 +11,20 @@ import java.util.Optional;
 @Repository
 public interface CardsOwnedRepository extends JpaRepository<CardsOwned,Long> {
 
-    @Query("SELECT imgLocation, quantity FROM cards_owned WHERE userId = ?1")
-    Optional<String[]> findDataByUserId(Long id);
 
 
-    @Query("UPDATE cards_owned SET quantity = quantity + 1 WHERE userId = ?1 AND imgLocation = ?2")
-    void incrementQuantity(Long id,String img);
+    @Query("UPDATE CardsOwned SET quantity = quantity + 1 WHERE userId = ?1 AND imgLocation = ?2")
+    void incrementQuantity(Long userId,String img);
 
-    boolean existsByUseridAndImglocation(Long id,String img);
+    @Query("UPDATE CardsOwned SET quantity = quantity + 1 WHERE entryId = ?1")
+    void incrementQuantity(Long entryId);
 
-    Optional<CardsOwned> findByUseridAndImglocation(Long id,String img);
+    Optional<List<CardsOwned>> findByUserId(Long id);
 
-    List<CardsOwned> findByUserid(Long id);
+    CardsOwned findByUserIdAndImgLocation(Long id,String img);
+
+    Boolean existsByUserIdAndImgLocation(Long id,String img);
+
+    Long findEntryIdByUserIdAndImgLocation(Long id,String img);
 
 }
