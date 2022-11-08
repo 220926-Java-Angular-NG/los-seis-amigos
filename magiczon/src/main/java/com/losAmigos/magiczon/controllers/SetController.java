@@ -1,6 +1,6 @@
 package com.losAmigos.magiczon.controllers;
 
-import com.losAmigos.magiczon.models.User;
+import com.losAmigos.magiczon.models.Set;
 import com.losAmigos.magiczon.services.SetService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.*;
@@ -20,5 +20,10 @@ public class SetController {
     @GetMapping("/codes")
     public List<String> setCodes(){
         return setService.findSetcodes();
+    }
+    @CrossOrigin("http://localhost:4200")
+    @GetMapping
+    public List<Set> getAllSets(){
+        return setService.findAllSets();
     }
 }

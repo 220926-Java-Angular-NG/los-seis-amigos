@@ -1,7 +1,9 @@
 package com.losAmigos.magiczon.services;
 
+import com.losAmigos.magiczon.models.Set;
 import com.losAmigos.magiczon.repos.sets.SetLoader;
 import com.losAmigos.magiczon.repos.sets.SetRepository;
+import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -30,4 +32,8 @@ public class SetService {
     public List<String> findSetcodes(){
         return setRepository.findSetcodes();
     }
+    public List<Set> findAllSets(){
+        return setRepository.findAll();
+    }
+
 }
