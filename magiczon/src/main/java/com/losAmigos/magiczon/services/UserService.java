@@ -18,13 +18,13 @@ public class UserService {
         if(userRepository.existsByUsername(username)){
             if(user.getPassword().equals(loginUser.getPassword())) return loginUser;
         }
-        return new User();
+        return null;
     }
 
     public User registerUser(User user){
         String username = user.getUsername();
         if(userRepository.existsByUsername(username)){
-            return new User();
+            return null;
         }
 
         return createUser(user);
@@ -45,6 +45,13 @@ public class UserService {
 
         return userRepository.findByUsername(username)
                 .orElseThrow(() -> new ResourceNotFoundException("User not found with username: " + username));
+    }
+
+    public User updatePassword(Long userId, String password) {
+        User user = getById(userId);
+        if (user == null) return null;
+        user.setPassword(password);
+        return userRepository.save(user);
     }
 
 //    private User getById(Long userId){
