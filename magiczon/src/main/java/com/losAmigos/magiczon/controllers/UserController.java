@@ -1,5 +1,6 @@
 package com.losAmigos.magiczon.controllers;
 
+import com.losAmigos.magiczon.models.ChangePassword;
 import com.losAmigos.magiczon.models.User;
 import com.losAmigos.magiczon.services.UserService;
 import lombok.RequiredArgsConstructor;
@@ -27,9 +28,9 @@ public class UserController {
     }
 
     @PutMapping("/password")
-    public User resetUserPassword(@RequestBody User user){
-
-        return userService.userLogin(user);
+    public User resetUserPassword(@RequestBody ChangePassword user){
+//        System.out.println(user.getUsername()+ user.getPassword()+ user.getNewPassword());
+        return userService.updatePassword(user);
     }
 
     @GetMapping("/{userId}")

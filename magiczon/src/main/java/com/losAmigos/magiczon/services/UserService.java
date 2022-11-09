@@ -1,5 +1,6 @@
 package com.losAmigos.magiczon.services;
 
+import com.losAmigos.magiczon.models.ChangePassword;
 import com.losAmigos.magiczon.models.User;
 import com.losAmigos.magiczon.repos.UserRepository;
 import com.losAmigos.magiczon.util.ResourceNotFoundException;
@@ -47,11 +48,15 @@ public class UserService {
                 .orElseThrow(() -> new ResourceNotFoundException("User not found with username: " + username));
     }
 
-    public User updatePassword(Long userId, String password) {
-        User user = getById(userId);
-        if (user == null) return null;
-        user.setPassword(password);
-        return userRepository.save(user);
+    public User updatePassword(ChangePassword user) {
+        String password = user.getNewPassword();
+        User newUser = new User();
+        newUser.setPassword(user.getPassword());
+        newUser.setUsername(user.getUsername());
+        newUser = userLogin(newUser);
+        if (newUser == null || password == null) return null;
+        newUser.setPassword(password);
+        return userRepository.save(newUser);
     }
 
 //    private User getById(Long userId){
