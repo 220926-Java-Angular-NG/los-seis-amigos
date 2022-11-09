@@ -26,6 +26,12 @@ public class UserController {
         return userService.userLogin(user);
     }
 
+    @PutMapping("/password")
+    public User resetUserPassword(@RequestBody User user){
+
+        return userService.userLogin(user);
+    }
+
     @GetMapping("/{userId}")
     public User getUserById(@PathVariable Long userId) {
         return userService.getById(userId);
