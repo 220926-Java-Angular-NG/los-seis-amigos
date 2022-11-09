@@ -14,7 +14,6 @@ public interface SetRepository extends JpaRepository<Set,String> {
     @Query("SELECT setcode From Set")
     List<String> findSetcodes();
 
-
-
-
+    @Query("SELECT name from Set where setcode = ?1")
+    String findNameBySetcode(String setcode);
 }

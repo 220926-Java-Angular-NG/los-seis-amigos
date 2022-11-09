@@ -21,6 +21,11 @@ public class SetController {
     public List<String> setCodes(){
         return setService.findSetcodes();
     }
+    @GetMapping("/getName/{setcode}")
+    public String getNameBySetcode(@PathVariable String setcode){
+        return setService.getNameBySetcode(setcode);
+    }
+
     @CrossOrigin("http://localhost:4200")
     @GetMapping
     public List<Set> getAllSets(){
