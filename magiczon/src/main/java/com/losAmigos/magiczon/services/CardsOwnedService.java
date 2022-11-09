@@ -10,9 +10,7 @@ import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 import org.springframework.web.bind.annotation.PathVariable;
 
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Random;
+import java.util.*;
 
 @Service
 @RequiredArgsConstructor
@@ -28,37 +26,42 @@ public class CardsOwnedService {
     }
 
     public List<CardsOwned> addSetToCollection(Long userId, String setcode) {
-        //query for set
         List<Card> setOfCards = cardsRepository.findCardsByActualSet(setcode);
         Random random = new Random();
         boolean hasMR = false;
-        for (Card c : setOfCards) {
-            if (c.getRarity().equalsIgnoreCase("m")) {
+        for (Card c : setOfCards)
+            if (c.getRarity().equalsIgnoreCase("m"))
                 hasMR = true;
+        List<Card> setOfCommonCardswl = cardsRepository.findCardsByActualSetWhereRarity(setcode, "C");
+        List<Card> setOfLands = new ArrayList<Card>();
+        List<Card> setOfCommonCards = new ArrayList<Card>();
+        for (Card c : setOfCommonCardswl) {
+            if (c.getText() != null) {
+                if (c.getType().toLowerCase().contains("land")) {
+                    setOfLands.add(c);
+                }
+            } else {
+                setOfCommonCards.add(c);
             }
-        }
-        List<Card> setOfCommonCards = cardsRepository.findCardsByActualSetWhereRarity(setcode, "C");
-        List<Card> setOfUncommonCards = cardsRepository.findCardsByActualSetWhereRarity(setcode,"U");
-        List<Card> setOfRareCards = cardsRepository.findCardsByActualSetWhereRarity(setcode,"R");
-        List<Card> setOfMythicRareCards = new ArrayList<Card>();
-        if (hasMR) {
-            setOfMythicRareCards = cardsRepository.findCardsByActualSetWhereRarity(setcode,"M");
-        }
-        for (int i = 1; i < 10; i++) {
-            addToCollection(userId, setOfCommonCards.get(random.nextInt(setOfCommonCards.size())).getImgLocation());
         }
 
-        for (int i = 1; i < 3; i++) {
+        List<Card> setOfUncommonCards = cardsRepository.findCardsByActualSetWhereRarity(setcode, "U");
+        List<Card> setOfRareCards = cardsRepository.findCardsByActualSetWhereRarity(setcode, "R");
+        List<Card> setOfMythicRareCards = new ArrayList<Card>();
+        if (hasMR)
+            setOfMythicRareCards = cardsRepository.findCardsByActualSetWhereRarity(setcode, "M");
+        for (int i = 1; i < 10; i++)
+            addToCollection(userId, setOfCommonCards.get(random.nextInt(setOfCommonCards.size())).getImgLocation());
+        for (int i = 1; i < 3; i++)
             addToCollection(userId, setOfUncommonCards.get(random.nextInt(setOfUncommonCards.size())).getImgLocation());
-        }
         if (hasMR) {
             int i = random.nextInt(8);
-            if (i == 1) {System.out.println("Mythic Rare");
+            if (i == 1)
                 addToCollection(userId, setOfMythicRareCards.get(random.nextInt(setOfMythicRareCards.size())).getImgLocation());
-            }
-        } else {System.out.println("Rare: ");
+        } else
             addToCollection(userId, setOfRareCards.get(random.nextInt(setOfRareCards.size())).getImgLocation());
-        }
+        System.out.println("Number of lands" + setOfLands.size());
+        addToCollection(userId, setOfLands.get(random.nextInt(setOfLands.size())).getImgLocation());
         return getUserCollection(userId);
     }
 
@@ -89,6 +92,28 @@ public class CardsOwnedService {
 
     public List<CardsOwned> getAllCollections() {
         return cardsOwnedRepository.findAll();
+    }
+
+    public List<CardsOwned> getUserOwnOfSet(Long userId, String setcode) {
+        List<CardsOwned> allUserCards = this.getUserCollection(userId);
+        List<CardsOwned> cardsOfASet = new ArrayList<CardsOwned>();
+        for (CardsOwned c : allUserCards) {
+            String[] sp = c.getImgLocation().split("/");
+            String setcodeFromCardOwned = sp[0];
+            if (setcodeFromCardOwned.equals(setcode)) {
+                cardsOfASet.add(c);
+            }
+        }
+        return cardsOfASet;
+    }
+
+    public Set<String> getSetsUserOwns(Long userId) {
+        List<CardsOwned> allUserCards = this.getUserCollection(userId);
+        Set<String> listOfSets = new TreeSet<String>();
+        for (CardsOwned c : allUserCards) {
+            listOfSets.add(c.getImgLocation().split("/")[0]);
+        }
+        return listOfSets;
     }
 
 }

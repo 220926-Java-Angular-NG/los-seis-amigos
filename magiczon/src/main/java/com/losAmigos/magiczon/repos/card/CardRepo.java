@@ -48,6 +48,7 @@ public class CardRepo {
         return false;
     }
 
+
     private void loadTable() {
         BufferedReader inputFile;
         // http://magicplugin.normalitycomics.com/update/cardFiles/
@@ -93,5 +94,4 @@ public class CardRepo {
             }
         }
     }
-
 }
