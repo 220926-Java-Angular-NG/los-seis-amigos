@@ -20,7 +20,7 @@ public class CardService {
     public CardService(CardRepository cardRepository) {
         this.cardRepository = cardRepository;
         // will populate the MTG cards if there are none
-        //this.initCardRepo();
+        this.initCardRepo();
     }
     public void initCardRepo(){
         CardRepo cardRepo = new CardRepo(cardRepository);

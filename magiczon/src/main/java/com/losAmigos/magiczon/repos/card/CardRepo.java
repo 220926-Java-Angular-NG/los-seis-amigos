@@ -23,7 +23,7 @@ public class CardRepo {
 
 
     public void getCardRepo() {
-        if (!(this.cardRepository.count() < 46820)) return;
+        if (!(this.cardRepository.count() < 46000)) return;
         this.loadTable();
     }
 

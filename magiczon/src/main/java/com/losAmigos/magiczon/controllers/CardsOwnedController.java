@@ -26,5 +26,9 @@ public class CardsOwnedController {
     public CardsOwned addToCollection(@PathVariable Long userId, @RequestBody String img){
         return cardsOwnedService.addToCollection(userId,img);
     }
+    @PostMapping("/{userId}/{setcode}")
+    public List<CardsOwned> addSetToCollection(@PathVariable Long userId, @PathVariable String setcode){
+        return cardsOwnedService.addSetToCollection(userId,setcode);
+    }
 
 }
