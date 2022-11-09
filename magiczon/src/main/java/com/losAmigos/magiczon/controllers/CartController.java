@@ -17,6 +17,7 @@ public class CartController {
     public Cart findCartById(@PathVariable Long cartId) {
         return cartService.findCartById(cartId);
     }
+
     @CrossOrigin(origins = "http://localhost:4200")
     @PostMapping
     public Cart createCart(@RequestBody Cart cart) {
@@ -29,17 +30,25 @@ public class CartController {
         System.out.println("AKSJDHKAJSHDKAHDKSAKDSKJDH"+cartService.findAllWithUserId(userId));
         return cartService.findAllWithUserId(userId);
     }
+
     @CrossOrigin(origins = "http://localhost:4200")
     @PutMapping("/item/{cartId}/quantity/{quantity}")
     public Cart updateCartQuantity(@PathVariable Long cartId, @PathVariable int quantity) {
         Cart cartInfo = cartService.findCartById(cartId);
         return cartService.updateCartQuantity(cartInfo, quantity);
     }
+
     @CrossOrigin(origins = "http://localhost:4200")
     @DeleteMapping("/item/{cartId}")
     public boolean deleteCart(@PathVariable Long cartId) {
         return cartService.deleteCart(cartId);
     }
+
+//    @CrossOrigin(origins = "http://localhost:4200")
+//    @DeleteMapping("/item/set/{setCode}/user/{userId}")
+//    public boolean deleteCartWithSetCode(@PathVariable String setCode, @PathVariable Long userId) {
+//        return cartService.deleteCartWithSetCode(setCode, userId);
+//    }
 //    @GetMapping("/user/{")
 //    @GetMapping
 //    public List<Cart> getAllCarts() {

@@ -3,14 +3,12 @@ package com.losAmigos.magiczon.controllers;
 import com.losAmigos.magiczon.models.User;
 import com.losAmigos.magiczon.services.UserService;
 import lombok.RequiredArgsConstructor;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 @RestController //
 @RequiredArgsConstructor
 @RequestMapping("/users")
+@CrossOrigin(origins = "http://localhost:4200")
 public class UserController {
 
     private final UserService userService;
@@ -22,10 +20,15 @@ public class UserController {
         return userService.registerUser(user);
     }
 
+//    @CrossOrigin(origins = "http://localhost:4200")
     @PostMapping("/login")
     public User userLogin(@RequestBody User user){
         return userService.userLogin(user);
     }
 
+    @GetMapping("/{userId}")
+    public User getUserById(@PathVariable Long userId) {
+        return userService.getById(userId);
+    }
 
 }

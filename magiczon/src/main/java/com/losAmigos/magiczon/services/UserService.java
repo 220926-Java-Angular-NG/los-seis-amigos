@@ -34,7 +34,7 @@ public class UserService {
         return userRepository.save(user);
     }
 
-    private User getById(Integer id){
+    public User getById(Long id){
         return userRepository.findById(id)
                 .orElseThrow(() -> new ResourceNotFoundException("User not found with id: " + id));
     }
@@ -45,6 +45,13 @@ public class UserService {
         return userRepository.findByUsername(username)
                 .orElseThrow(() -> new ResourceNotFoundException("User not found with username: " + username));
     }
+
+//    private User getById(Long userId){
+//        return userRepository.findById(userId)
+//                .orElseThrow(() -> new ResourceNotFoundException("User not found with id: " + userId));
+//    }
+
+
 
 
 

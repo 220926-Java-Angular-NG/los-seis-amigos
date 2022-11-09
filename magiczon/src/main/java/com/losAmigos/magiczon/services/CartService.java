@@ -41,5 +41,13 @@ public class CartService {
         return true;
     }
 
+//    public boolean deleteCartWithSetCode(String setCode, Long userId) {
+//        if (findCartBy(cartId) == null) return false;
+//        cartRepository.deleteById(cartId);
+//        return cartRepository.deleteByUserIdAndSetcode(userId, setCode);
+//    }
+
+
+
 
 }
