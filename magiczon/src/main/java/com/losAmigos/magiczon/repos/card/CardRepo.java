@@ -19,23 +19,12 @@ import java.sql.SQLException;
 public class CardRepo {
 
     private final CardRepository cardRepository;
+    private boolean keepGoing = false;
 
 
-    public void getCardRepo(){
-        if (!needToPopulate()) return;
-
-//        CardRepo cardRepo = new CardRepo();
-        int i = 0;
-
-        do{
-            if (this.tableExits()) {
-                this.loadTable();
-                break;
-            }
-            i++;
-        }while(!this.tableExits()&&(i<10));
-
-//        return this.getCardRepository();
+    public void getCardRepo() {
+        if (!(this.cardRepository.count() < 46820)) return;
+        this.loadTable();
     }
 
 
@@ -91,16 +80,10 @@ public class CardRepo {
                     try {
                         Card card = new Card(lineFromFile);
 
-                        if(card.getImgLocation()!=null){
+
+                        if (card.getImgLocation() != null) {
                             this.cardRepository.save(card);
                         }
-//                        if (card.getSetName() != null || card.getName() != null)
-//                            this.cardRepository.save(card);
-//
-//                        if(!isBlank(card)){
-//                            if (card.getSetName() != null || card.getName() != null) this.cardRepository.save(card);
-//                        }
-
                     } catch (DataException e) {
                         System.out.println(e.getMessage());
                     }

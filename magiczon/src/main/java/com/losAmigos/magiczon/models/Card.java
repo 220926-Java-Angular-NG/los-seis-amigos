@@ -17,9 +17,9 @@ public class Card {
 //    @Transient
 //    private String info;
 
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long cardId;
+
+//    @GeneratedValue(strategy = GenerationType.IDENTITY)
+//    private Long cardId;
 
     @Column(length = 141)
     @NotNull
@@ -29,6 +29,7 @@ public class Card {
     @NotNull
     private String setName;
 
+    @Id
     @Column(length = 51)
     private String imgLocation;
 
