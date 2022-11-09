@@ -28,6 +28,26 @@ public class CardRepo {
     }
 
 
+    private Boolean tableExits(){
+        try {
+            Long count = this.cardRepository.count();
+            System.out.println(count);
+            if(count >= 0) return true;
+        } catch (Exception e) {
+            System.out.println("ERROR: "+e.getMessage());
+        }
+        return false;
+    }
+
+    private boolean needToPopulate() {
+        return this.cardRepository.count() == 0;
+    }
+
+    private boolean isBlank(Card card){
+        if (card.getActualSet()==null||card.getActualSet().equals("")) return true;
+        return false;
+    }
+
     private void loadTable() {
         BufferedReader inputFile;
         // http://magicplugin.normalitycomics.com/update/cardFiles/
@@ -59,6 +79,7 @@ public class CardRepo {
                     //System.out.println(lineFromFile);
                     try {
                         Card card = new Card(lineFromFile);
+
 
                         if (card.getImgLocation() != null) {
                             this.cardRepository.save(card);

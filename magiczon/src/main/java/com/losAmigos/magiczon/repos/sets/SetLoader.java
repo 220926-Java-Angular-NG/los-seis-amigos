@@ -21,7 +21,7 @@ public class SetLoader {
         BufferedReader inputFile;
         try {
             inputFile = new BufferedReader(new FileReader(
-                    "magiczon/src/main/resources/PackInfo.txt"));
+                    "src/main/resources/PackInfo.txt"));
             String lineFromFile = inputFile.readLine();
             while (lineFromFile != null) {
                 System.out.println(lineFromFile);

@@ -14,7 +14,7 @@ public class CardController {
     private final CardService cardService;
 
     @CrossOrigin(origins = "http://localhost:4200")
-    @GetMapping("/{id}")
+    @GetMapping("/id/{id}")
     public Card findCardById(@PathVariable Long id) {
         return cardService.findCardById(id);
     }

@@ -1,6 +1,6 @@
 package com.losAmigos.magiczon.controllers;
 
-import com.losAmigos.magiczon.models.User;
+import com.losAmigos.magiczon.models.Set;
 import com.losAmigos.magiczon.services.SetService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.*;
@@ -21,16 +21,10 @@ public class SetController {
     public List<String> setCodes(){
         return setService.findSetcodes();
     }
+    @CrossOrigin("http://localhost:4200")
+    @GetMapping
+    public List<Set> getAllSets(){
+        return setService.findAllSets();
+    }
 
-//    @GetMapping("/pack_image/{code}")
-//    public String getUserByEmail(@PathVariable String code){
-//        userRepository.findById(id).orElseThrow(() -> new RuntimeException("user not found with id " + id));
-//
-//        return setService.getSetCode(code);
-//    }
-
-//    @GetMapping("/email/{email}")
-//    public User getUserByEmail(@PathVariable String email){
-//        return userService.getUserByEmail(email);
-//    }
 }
