@@ -12,6 +12,7 @@ import java.util.List;
 @RestController
 @RequiredArgsConstructor
 @RequestMapping("/collection")
+@CrossOrigin(origins = "http://localhost:4200")
 public class CardsOwnedController {
 
     private final CardsOwnedService cardsOwnedService;
