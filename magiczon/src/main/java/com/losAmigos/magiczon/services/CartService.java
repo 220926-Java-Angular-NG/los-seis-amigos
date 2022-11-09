@@ -5,6 +5,7 @@ import com.losAmigos.magiczon.repos.cart.CartRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
+import javax.transaction.Transactional;
 import java.util.List;
 
 @Service
@@ -39,6 +40,13 @@ public class CartService {
         if (findCartById(cartId) == null) return false;
         cartRepository.deleteById(cartId);
         return true;
+    }
+
+    public boolean clearCart(Long userId) {
+//        if () return false;
+        Integer itemsDeleted = cartRepository.deleteAllByUser_Id(userId);
+//        cartRepository.deleteById(cartId);
+        return itemsDeleted > 0;
     }
 
 //    public boolean deleteCartWithSetCode(String setCode, Long userId) {

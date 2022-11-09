@@ -5,6 +5,7 @@ import com.losAmigos.magiczon.services.CartService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.*;
 
+import javax.transaction.Transactional;
 import java.util.List;
 
 @RestController
@@ -42,6 +43,12 @@ public class CartController {
     @DeleteMapping("/item/{cartId}")
     public boolean deleteCart(@PathVariable Long cartId) {
         return cartService.deleteCart(cartId);
+    }
+
+    @CrossOrigin(origins = "http://localhost:4200")
+    @DeleteMapping("/user/{userId}")
+    public boolean clearUserCart(@PathVariable Long userId) {
+        return cartService.clearCart(userId);
     }
 
 //    @CrossOrigin(origins = "http://localhost:4200")
