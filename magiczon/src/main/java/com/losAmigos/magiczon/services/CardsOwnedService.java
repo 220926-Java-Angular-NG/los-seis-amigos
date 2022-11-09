@@ -10,9 +10,7 @@ import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 import org.springframework.web.bind.annotation.PathVariable;
 
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Random;
+import java.util.*;
 
 @Service
 @RequiredArgsConstructor
@@ -62,7 +60,7 @@ public class CardsOwnedService {
                 addToCollection(userId, setOfMythicRareCards.get(random.nextInt(setOfMythicRareCards.size())).getImgLocation());
         } else
             addToCollection(userId, setOfRareCards.get(random.nextInt(setOfRareCards.size())).getImgLocation());
-        System.out.println("Number of lands"+setOfLands.size());
+        System.out.println("Number of lands" + setOfLands.size());
         addToCollection(userId, setOfLands.get(random.nextInt(setOfLands.size())).getImgLocation());
         return getUserCollection(userId);
     }
@@ -99,17 +97,23 @@ public class CardsOwnedService {
     public List<CardsOwned> getUserOwnOfSet(Long userId, String setcode) {
         List<CardsOwned> allUserCards = this.getUserCollection(userId);
         List<CardsOwned> cardsOfASet = new ArrayList<CardsOwned>();
-        for(CardsOwned c:allUserCards){
+        for (CardsOwned c : allUserCards) {
             String[] sp = c.getImgLocation().split("/");
             String setcodeFromCardOwned = sp[0];
-            if(setcodeFromCardOwned.equals(setcode)){
+            if (setcodeFromCardOwned.equals(setcode)) {
                 cardsOfASet.add(c);
             }
         }
-        for(CardsOwned c:cardsOfASet){
-            System.out.println(c.getImgLocation());
-        }
         return cardsOfASet;
+    }
+
+    public Set<String> getSetsUserOwns(Long userId) {
+        List<CardsOwned> allUserCards = this.getUserCollection(userId);
+        Set<String> listOfSets = new TreeSet<String>();
+        for (CardsOwned c : allUserCards) {
+            listOfSets.add(c.getImgLocation().split("/")[0]);
+        }
+        return listOfSets;
     }
 
 }

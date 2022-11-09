@@ -7,6 +7,7 @@ import org.springframework.web.bind.annotation.*;
 
 import javax.websocket.server.PathParam;
 import java.util.List;
+import java.util.Set;
 
 
 @RestController
@@ -32,6 +33,10 @@ public class CardsOwnedController {
     public CardsOwned addToCollection(@PathVariable Long userId, @RequestBody String img){
         return cardsOwnedService.addToCollection(userId,img);
     }
-
+    @GetMapping("/sets/{userId}")
+    @ResponseBody
+    public Set<String> getUserOwnOfSet(@PathVariable Long userId){
+        return cardsOwnedService.getSetsUserOwns(userId);
+    }
 
 }
