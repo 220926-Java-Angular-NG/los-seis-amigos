@@ -13,35 +13,45 @@ public class UserService {
 
     private final UserRepository userRepository;
 
-    public User userLogin(User user){
+    public User userLogin(User user) {
         String username = user.getUsername();
         User loginUser = getByUsername(username);
-        if(userRepository.existsByUsername(username)){
-            if(user.getPassword().equals(loginUser.getPassword())) return loginUser;
+        if (userRepository.existsByUsername(username)) {
+            if (user.getPassword().equals(loginUser.getPassword())) {
+                return loginUser;
+            } else {
+                User passwordMissMatch = new User();
+                passwordMissMatch.setUsername("PASSWORDMISSMATCH");
+                return passwordMissMatch;
+            }
+        } else {
+            User userNameMissMatch = new User();
+            userNameMissMatch.setUsername("USERNAMEMISSMATCH");
+            System.out.println("USERNAME MISS MATCH");
+            return userNameMissMatch;
         }
-        return null;
     }
 
-    public User registerUser(User user){
+    public User registerUser(User user) {
         String username = user.getUsername();
-        if(userRepository.existsByUsername(username)){
+        if (userRepository.existsByUsername(username)) {
             return null;
         }
 
         return createUser(user);
     }
 
-    private User createUser(User user){
+    private User createUser(User user) {
         return userRepository.save(user);
     }
 
-    public User getById(Long id){
+    public User getById(Long id) {
 
         return userRepository.findById(id)
                 .orElseThrow(() -> new ResourceNotFoundException("User not found with id: " + id));
     }
 
-    private User getByUsername(String username){
+    private User getByUsername(String username) {
 
 
         return userRepository.findByUsername(username)
@@ -63,11 +73,6 @@ public class UserService {
 //        return userRepository.findById(userId)
 //                .orElseThrow(() -> new ResourceNotFoundException("User not found with id: " + userId));
 //    }
-
-
-
-
-
 
 
 }
