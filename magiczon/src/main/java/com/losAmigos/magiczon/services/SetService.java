@@ -36,5 +36,5 @@ public class SetService {
         return setRepository.findAll();
     }
 
-
+    public String getNameBySetcode(String setcode){return setRepository.findNameBySetcode(setcode);}
 }
