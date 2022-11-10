@@ -76,7 +76,6 @@ Ixalan,https://d1rw89lz12ur5s.cloudfront.net/photo/collectorscache/file/756122/M
 Rivals of Ixalan,https://crystal-cdn3.crystalcommerce.com/photos/6377971/MTGRIX_EN_Bstr_01_01.png,RIX
 Dominaria,https://product-images.tcgplayer.com/158425.jpg,DOM
 Guilds of Ravnica,https://d1rw89lz12ur5s.cloudfront.net/photo/collectorscache/file/f6ceddb0b09811e8a0b00191c12bae9d/grn%20pack.jpg,GRN
-Ravnica Allegiance,https://cdn.shopify.com/s/files/1/0341/3465/5114/products/qpRrZqqSRh.png?v=1585102405,RAN
 War of the Spark,https://tools.toywiz.com/_images/_webp/_products/lg/warofthesparkboosterpack.webp,WAR
 Throne of Eldraine,https://crystal-cdn1.crystalcommerce.com/photos/6520682/toe-boosterpack.jpg,ELD
 Theros Beyond Death,https://product-images.tcgplayer.com/202299.jpg,THB
