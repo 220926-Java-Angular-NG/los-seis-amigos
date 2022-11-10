@@ -37,6 +37,7 @@ public class CardsOwnedService {
         List<Card> setOfCommonCards = new ArrayList<Card>();
         for (Card c : setOfCommonCardswl) {
             if (c.getText() != null) {
+                System.out.println(c.getType().toLowerCase().contains("land"));
                 if (c.getType().toLowerCase().contains("land")) {
                     setOfLands.add(c);
                 } else {
@@ -52,19 +53,34 @@ public class CardsOwnedService {
         List<Card> setOfMythicRareCards = new ArrayList<Card>();
         if (hasMR)
             setOfMythicRareCards = cardsRepository.findCardsByActualSetWhereRarity(setcode, "M");
-        for (int i = 1; i < 10; i++)
+        for (int i = 0; i < 10; i++) {
             addToCollection(userId, setOfCommonCards.get(random.nextInt(setOfCommonCards.size())).getImgLocation());
-        for (int i = 1; i < 3; i++)
-            addToCollection(userId, setOfUncommonCards.get(random.nextInt(setOfUncommonCards.size())).getImgLocation());
+            System.out.println("ADDED COMMON");
+        }
+        for (int i = 0; i < 3; i++) {
+            System.out.println("ADDED UNCOMMON");addToCollection(userId, setOfUncommonCards.get(random.nextInt(setOfUncommonCards.size())).getImgLocation());
+        }
         if (hasMR) {
             int i = random.nextInt(8);
-            if (i == 1)
+            if (i == 1) {
+                System.out.println("ADDED A MRARE");
                 addToCollection(userId, setOfMythicRareCards.get(random.nextInt(setOfMythicRareCards.size())).getImgLocation());
-        } else
+            } else {
+                System.out.println("ADDED A RARE");
+                addToCollection(userId, setOfRareCards.get(random.nextInt(setOfRareCards.size())).getImgLocation());
+            }
+        } else {
+            System.out.println("ADDED A RARE");
             addToCollection(userId, setOfRareCards.get(random.nextInt(setOfRareCards.size())).getImgLocation());
+        }
         System.out.println("Number of lands" + setOfLands.size());
-        if (setOfLands.size() > 0)
+        if (setOfLands.size() > 0) {
+            System.out.println("ADDED A LAND");
             addToCollection(userId, setOfLands.get(random.nextInt(setOfLands.size())).getImgLocation());
+        } else {
+            System.out.println("NO LANDS ADDED COMMON");
+            addToCollection(userId, setOfCommonCards.get(random.nextInt(setOfCommonCards.size())).getImgLocation());
+        }
         return getUserCollection(userId);
     }
 
