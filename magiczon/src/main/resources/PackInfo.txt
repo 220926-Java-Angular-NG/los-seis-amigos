@@ -1,9 +1,4 @@
-Arabian Nights,https://52f4e29a8321344e30ae-0f55c9129972ac85d6b1f4e703468e6b.ssl.cf2.rackcdn.com/products/pictures/79658.jpg,ARN
-Antiquities,https://product-images.tcgplayer.com/27325.jpg,ATQ
 Legends,https://product-images.tcgplayer.com/27348.jpg,LEG
-The Dark,https://m.media-amazon.com/images/I/51hrXHOi7TL.jpg,DRK
-Fallen Empires,https://m.media-amazon.com/images/I/41DdtfYROdL._AC_SY580_.jpg,FEM
-Alliances,http://lib.store.yahoo.net/lib/inmint/magic-alliances-pack.jpg,ALL
 Ice Age,https://52f4e29a8321344e30ae-0f55c9129972ac85d6b1f4e703468e6b.ssl.cf2.rackcdn.com/products/pictures/1110897.jpg,ICE
 Coldsnap,https://52f4e29a8321344e30ae-0f55c9129972ac85d6b1f4e703468e6b.ssl.cf2.rackcdn.com/products/pictures/141888.jpg,CSP
 Mirage,https://i.ebayimg.com/images/g/FQUAAOSw1a1g1gDa/s-l640.jpg,MIR
@@ -82,7 +77,6 @@ Theros Beyond Death,https://product-images.tcgplayer.com/202299.jpg,THB
 Ikoria: Lair of Behemoths,https://vgmx.com/wp-content/uploads/2020/04/MTGIKO_EN_Bstr_01_03.png,IKO
 Zendikar Rising,https://crystal-cdn1.crystalcommerce.com/photos/6592483/MTGZNR_EN_DrftBstr_01_01.jpg,ZNR
 Kaldheim,https://media.wizards.com/2020/images/daily/en_n71l8BC0uy.png,KHM
-Strixhaven: School of Mages,https://cdn.shopify.com/s/files/1/0251/0979/0766/products/MTGSTX_EN_Bstr_Set_01_02_1.png?v=1619116901,STX
 Dungeons & Dragons: Adventures in the Forgotten Realms,https://product-images.tcgplayer.com/fit-in/437x437/238731.jpg,AFR
 Innistrad: Midnight Hunt,https://cdn.shopify.com/s/files/1/0561/0376/4010/products/758787ac9517aa61ca58778e16e468f4a6f8d443_800x.png?v=1644278805,MID
 Innistrad: Crimson Vow,https://cdn.shopify.com/s/files/1/0614/4684/8740/products/06a392ea-d3ef-5935-8114-a40be5c64242_dddd0049-1486-4556-8f87-21fc2c1d21c5_800x.png?v=1642117942,VOW
