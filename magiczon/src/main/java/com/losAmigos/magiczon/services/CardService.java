@@ -34,7 +34,7 @@ public class CardService {
     }
 
     public List<Card> findCardsBySet(String setName) {
-        return cardRepository.findCardsBySetName(setName);
+        return cardRepository.findCardsByActualSet(setName);
     }
 
     public List<String> findsetNames () {

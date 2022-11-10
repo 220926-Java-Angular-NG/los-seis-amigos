@@ -6,6 +6,7 @@ import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
+import java.util.Map;
 
 @RestController //
 @RequiredArgsConstructor
@@ -21,9 +22,17 @@ public class SetController {
     public List<String> setCodes(){
         return setService.findSetcodes();
     }
+
+    @CrossOrigin("http://localhost:4200")
     @GetMapping("/getName/{setcode}")
-    public String getNameBySetcode(@PathVariable String setcode){
+    public Map<String, String> getNameBySetcode(@PathVariable String setcode){
         return setService.getNameBySetcode(setcode);
+    }
+
+    @CrossOrigin("http://localhost:4200")
+    @GetMapping("/setcode/{setcode}")
+    public Set getSetWithSetCode(@PathVariable String setcode){
+        return setService.findBySetCode(setcode);
     }
 
     @CrossOrigin("http://localhost:4200")

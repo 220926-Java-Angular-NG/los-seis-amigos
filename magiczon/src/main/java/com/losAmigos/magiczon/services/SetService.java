@@ -7,7 +7,9 @@ import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 
 @Service
@@ -36,5 +38,13 @@ public class SetService {
         return setRepository.findAll();
     }
 
-    public String getNameBySetcode(String setcode){return setRepository.findNameBySetcode(setcode);}
+    public Set findBySetCode(String setcode){
+        return setRepository.findSetBySetcode(setcode);
+    }
+
+    public Map<String, String> getNameBySetcode(String setcode){
+        Map<String, String> a = new HashMap<>();
+        a.put("name", setRepository.findNameBySetcode(setcode));
+        return a;
+    }
 }
