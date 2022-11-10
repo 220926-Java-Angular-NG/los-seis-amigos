@@ -39,6 +39,8 @@ public class CardsOwnedService {
             if (c.getText() != null) {
                 if (c.getType().toLowerCase().contains("land")) {
                     setOfLands.add(c);
+                } else {
+                    setOfCommonCards.add(c);
                 }
             } else {
                 setOfCommonCards.add(c);
@@ -61,7 +63,8 @@ public class CardsOwnedService {
         } else
             addToCollection(userId, setOfRareCards.get(random.nextInt(setOfRareCards.size())).getImgLocation());
         System.out.println("Number of lands" + setOfLands.size());
-        addToCollection(userId, setOfLands.get(random.nextInt(setOfLands.size())).getImgLocation());
+        if (setOfLands.size() > 0)
+            addToCollection(userId, setOfLands.get(random.nextInt(setOfLands.size())).getImgLocation());
         return getUserCollection(userId);
     }
 
